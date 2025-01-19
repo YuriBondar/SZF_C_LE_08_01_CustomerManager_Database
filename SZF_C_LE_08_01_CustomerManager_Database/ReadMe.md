@@ -94,5 +94,41 @@ Gestalten Sie die GUI strukturiert und überlegen Sie im Voraus, welche Elemente
 •	Проектируйте графический интерфейс пользователя (GUI) структурировано. 
 Заранее продумайте, какие элементы и атрибуты будут необходимы.
 
+CREATE DATABASE GoldDigger_CustomerManagerDB_Csharp_LO08;
+USE GoldDigger_CustomerManagerDB_Csharp_LO08;
+
+CREATE TABLE customers (
+CustomerID INT AUTO_INCREMENT PRIMARY KEY, 
+CustomerFirstName VARCHAR(30),
+CustomerLastName VARCHAR(30),
+CustomerStreet VARCHAR(30),
+CustomerHausNumber VARCHAR(10),
+CustomerPostIndex VARCHAR(6),
+CustomerCity VARCHAR(30),
+CustomerEmail VARCHAR(30)
+ );
+ 
+ CREATE TABLE authorizations (
+UserLogin VARCHAR(30) PRIMARY KEY, 
+UserPassword VARCHAR(30)
+ );
+ 
+ drop DATABASE GoldDigger_CustomerManagerDB_Csharp_LO08;
+ SELECT * FROM authorizations;
+ SELECT * FROM Customers;
+ SET SQL_SAFE_UPDATES = 0;
+ delete from Customers;
+ 
+ INSERT INTO authorizations (UserLogin, UserPassword)
+ VALUES('admin','admin');
+ 
+ INSERT INTO Customers (CustomerFirstName, CustomerLastName, CustomerStreet, CustomerHausNumber, CustomerPostIndex, CustomerCity, CustomerEmail)
+VALUES
+('Johann', 'Schmidt', 'Kärntner Straße', '12', '1010', 'Wien', 'johann.schmidt@example.at'),
+('Anna', 'Müller', 'Graben', '7A', '5020', 'Salzburg', 'anna.mueller@example.at'),
+('Peter', 'Steiner', 'Mariahilfer Straße', '5', '6020', 'Innsbruck', 'peter.steiner@example.at'),
+('Katrin', 'Hofmann', 'Landstraße', '3', '4020', 'Linz', 'katrin.hofmann@example.at'),
+('Lukas', 'Berger', 'Rathausplatz', '10', '8010', 'Graz', 'lukas.berger@example.at');
+
 
 
