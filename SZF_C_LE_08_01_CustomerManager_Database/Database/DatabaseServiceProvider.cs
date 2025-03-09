@@ -27,7 +27,7 @@ namespace SZF_C_LE_08_01_CustomerManager_Database.Database
                 /// add configuration  
                 .AddSingleton(configurator.Configuration)
                 ///add object for connection with database
-                .AddDbContext<CustomerManagerDatabaseContext>(ServiceLifetime.Transient)
+                .AddDbContext<CustomerManagerDatabaseContext>(ServiceLifetime.Scoped)
                 ///add object for user's authorisation and ragistration in database 
                 .AddScoped<DatabaseAuthenticationService>()
                 ///add object for intaractions with Customer table in database

@@ -15,7 +15,6 @@ namespace SZF_C_LE_08_01_CustomerManager_Database.Views
         public AuthorizationWindow(ServiceProvider customerManagerServices)
         {
             InitializeComponent();
-            MessageBox.Show($"create authorization window", "Erfolg");
 
             _customerManagerServices = customerManagerServices;
 
@@ -38,7 +37,7 @@ namespace SZF_C_LE_08_01_CustomerManager_Database.Views
         private void RunRegistrationWindow_Click(object sender, RoutedEventArgs e)
         {
 
-            MessageBox.Show($"call ragistration window", "Erfolg");
+            
             _authorizationWindowViewModel.LoginInput = "";
             var _registrationWindow = new RegistrationWindow(_customerManagerServices);
             _authorizationWindowViewModel.AuthorizationCompleted -= RunMainWindow;
